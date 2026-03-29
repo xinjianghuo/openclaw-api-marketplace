@@ -1,0 +1,10 @@
+﻿馃攳 Node Connection Doctor - 寮€濮嬭瘖鏂?(quick妯″紡)...
+
+
+馃搵 璇婃柇鎶ュ憡:
+鉂?缃戝叧鐘舵€? 缃戝叧鐘舵€佹鏌ュけ璐?
+馃挕 寤鸿:
+- 閲嶅惎缃戝叧: openclaw gateway restart
+- 妫€鏌?token: openclaw config get gateway.auth.token
+
+鉁?璇婃柇瀹屾垚

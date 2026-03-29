@@ -1,0 +1,19 @@
+{
+  "name": "human-browser-automation",
+  "version": "1.0.0",
+  "description": "Human-like browser automation with Playwright - undetectable",
+  "main": "human-login-demo.js",
+  "scripts": {
+    "demo": "node human-login-demo.js",
+    "test": "playwright test",
+    "stealth": "node stealth-test.js"
+  },
+  "dependencies": {
+    "playwright": "^1.58.0",
+    "simple-statistics": "^8.0.1",
+    "bezier-js": "^6.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0"
+  }
+}

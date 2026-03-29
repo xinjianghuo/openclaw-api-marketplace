@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Gemfile",
+      "use": "@vercel/ruby",
+      "config": {
+        "bundle": {
+          "args": ["install", "--without", "development", "test"]
+        }
+      }
+    },
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/_site/$1"
+    }
+  ]
+}

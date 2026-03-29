@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Mouse Simulation Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            overflow: hidden;
+        }
+        #canvas {
+            border: 2px solid #444;
+            background: #0f0f1a;
+            cursor: none;
+            display: block;
+            margin: 20px auto;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        #status {
+            text-align: center;
+            margin: 10px;
+            font-family: monospace;
+            color: #00ff00;
+        }
+        .info {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background: #16213e;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">🤖 Human Browser Simulation</h1>
+
+    <div class="info">
+        <strong>演示说明:</strong><br>
+        • 点击 "Start Demo" 观看完全人类化的鼠标移动<br>
+        • 鼠标轨迹: 贝塞尔曲线 + 随机抖动 + 变速<br>
+        • 模拟真实手部运动 (非直线、非匀速)<br>
+        • 技术: Canvas + 贝塞尔算法 + 随机统计分布
+    </div>
+
+    <div class="controls">
+        <button id="startBtn">🎯 Start Demo</button>
+        <button id="clearBtn">🗑️ Clear</button>
+    </div>
+
+    <div id="status">Ready</div>
+
+    <canvas id="canvas" width="1200" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const status = document.getElementById('status');
+
+        // 模拟人类鼠标移动的类
+        class HumanMouse {
+            constructor(ctx) {
+                this.ctx = ctx;
+                this.currentX = 100;
+                this.currentY = 300;
+                this.minSpeed = 200;   // px/s
+                this.maxSpeed = 1500;
+                this.jitter = 1.5;
+            }
+
+            // 贝塞尔曲线生成点
+            generateBezierPath(x0, y0, x1, y1, steps) {
+                const path = [];
+                const cx = x0 + (x1 - x0) * this.triangular(0.3, 0.5, 0.7);
+                const cy = y0 + (y1 - y0) * this.triangular(0.3, 0.5, 0.7);
+
+                for (let i = 0; i <= steps; i++) {
+                    const t = i / steps;
+                    let x = Math.pow(1-t, 3) * x0 +
+                            3 * Math.pow(1-t, 2) * t * cx +
+                            3 * (1-t) * t * t * x1 +
+                            Math.pow(t, 3) * x1;
+                    let y = Math.pow(1-t, 3) * y0 +
+                            3 * Math.pow(1-t, 2) * t * cy +
+                            3 * (1-t) * t * t * y1 +
+                            Math.pow(t, 3) * y1;
+
+                    // 抖动
+                    const jitterAmount = this.jitter * Math.sin(t * Math.PI);
+                    x += (Math.random() - 0.5) * jitterAmount;
+                    y += (Math.random() - 0.5) * jitterAmount;
+
+                    path.push({ x, y });
+                }
+                return path;
+            }
+
+            triangular(min, mode, max) {
+                // 三角分布 (偏向中间值)
+                const u = Math.random();
+                const c = (mode - min) / (max - min);
+                if (u < c) {
+                    return min + Math.sqrt(u * (max - min) * (mode - min));
+                } else {
+                    return max - Math.sqrt((1 - u) * (max - min) * (max - mode));
+                }
+            }
+
+            async moveTo(targetX, targetY, duration = 2000) {
+                const distance = Math.sqrt(Math.pow(targetX - this.currentX, 2) + Math.pow(targetY - this.currentY, 2));
+                const steps = Math.max(20, Math.floor(distance / 3));
+                const path = this.generateBezierPath(this.currentX, this.currentY, targetX, targetY, steps);
+
+                const baseDelay = duration / steps;
+
+                for (let i = 0; i < path.length; i++) {
+                    const point = path[i];
+
+                    // 绘制
+                    this.ctx.fillStyle = '#00ff00';
+                    this.ctx.fillRect(point.x, point.y, 2, 2);
+
+                    this.currentX = point.x;
+                    this.currentY = point.y;
+
+                    // 可变延迟 (模拟手部不均匀移动)
+                    const delay = baseDelay + (Math.random() - 0.5) * baseDelay * 0.5;
+                    await this.sleep(Math.max(5, delay));
+                }
+            }
+
+            sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            // 绘制光标
+            drawCursor() {
+                this.ctx.fillStyle = '#ff0000';
+                this.ctx.beginPath();
+                this.ctx.arc(this.currentX, this.currentY, 5, 0, Math.PI * 2);
+                this.ctx.fill();
+
+                // 十字准星
+                this.ctx.strokeStyle = '#ff0000';
+                this.ctx.lineWidth = 1;
+                this.ctx.beginPath();
+                this.ctx.moveTo(this.currentX - 10, this.currentY);
+                this.ctx.lineTo(this.currentX + 10, this.currentY);
+                this.ctx.moveTo(this.currentX, this.currentY - 10);
+                this.ctx.lineTo(this.currentX, this.currentY + 10);
+                this.ctx.stroke();
+            }
+        }
+
+        // --------------------------------------------------
+        const mouse = new HumanMouse(ctx);
+        let animationId = null;
+
+        // 清空画布
+        function clear() {
+            ctx.fillStyle = '#0f0f1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // 绘制网格
+            ctx.strokeStyle = '#222';
+            ctx.lineWidth = 1;
+            for (let x = 0; x < canvas.width; x += 50) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+            for (let y = 0; y < canvas.height; y += 50) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+
+            // 起点
+            mouse.currentX = 100;
+            mouse.currentY = 300;
+        }
+
+        // 绘制目标点
+        function drawTarget(x, y, label) {
+            ctx.fillStyle = '#ffff00';
+            ctx.beginPath();
+            ctx.arc(x, y, 15, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#fff';
+            ctx.font = '12px monospace';
+            ctx.fillText(label, x - 20, y - 20);
+        }
+
+        // 演示序列
+        async function runDemo() {
+            status.textContent = 'Running demo...';
+            clear();
+
+            // 目标点序列
+            const targets = [
+                { x: 300, y: 200, label: 'Email' },
+                { x: 300, y: 280, label: 'Password' },
+                { x: 600, y: 400, label: 'Login' },
+                { x: 900, y: 150, label: 'Link' },
+                { x: 200, y: 500, label: 'Checkbox' }
+            ];
+
+            // 绘制所有目标
+            targets.forEach(t => drawTarget(t.x, t.y, t.label));
+
+            // 依次移动到每个目标
+            for (let i = 0; i < targets.length; i++) {
+                const target = targets[i];
+                status.textContent = `Moving to ${target.label} (${target.x}, ${target.y})...`;
+
+                // 绘制轨迹预览 (静态)
+                ctx.strokeStyle = `rgba(0, 255, 0, 0.3)`;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(mouse.currentX, mouse.currentY);
+                ctx.lineTo(target.x, target.y);
+                ctx.stroke();
+
+                // 实际移动 (人类化)
+                await mouse.moveTo(target.x, target.y, random(1500, 3000));
+
+                // 到达后停顿 (模拟点击/输入)
+                mouse.drawCursor();
+                await mouse.sleep(random(300, 800));
+            }
+
+            status.textContent = '✅ Demo completed!';
+        }
+
+        // 事件绑定
+        document.getElementById('startBtn').addEventListener('click', () => {
+            if (animationId) cancelAnimationFrame(animationId);
+            runDemo();
+        });
+
+        document.getElementById('clearBtn').addEventListener('click', () => {
+            clear();
+            status.textContent = 'Cleared';
+        });
+
+        // 初始化
+        clear();
+        mouse.drawCursor();
+
+        console.log('🤖 Human Mouse Simulation Ready');
+        console.log('Click "Start Demo" to see human-like cursor movement');
+    </script>
+</body>
+</html>

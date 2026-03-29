@@ -1,0 +1,236 @@
+{
+  "services": [
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "category": "streaming",
+      "detect_patterns": ["netflix.com", "netflix"],
+      "cancel_url": "https://www.netflix.com/cancel",
+      "support_email": "info@help.netflix.com"
+    },
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "category": "music",
+      "detect_patterns": ["spotify.com", "spotify"],
+      "cancel_url": "https://www.spotify.com/account/subscription/",
+      "support_email": "support@spotify.com"
+    },
+    {
+      "id": "hulu",
+      "name": "Hulu",
+      "category": "streaming",
+      "detect_patterns": ["hulu.com", "hulu"],
+      "cancel_url": "https://help.hulu.com/s/article/cancel-subscription",
+      "support_email": "help@hulu.com"
+    },
+    {
+      "id": "aws",
+      "name": "Amazon Web Services",
+      "category": "cloud",
+      "detect_patterns": ["amazonaws.com", ".amazonaws.com", "aws.amazon.com"],
+      "cancel_url": "https://console.aws.amazon.com/billing/home",
+      "support_email": "aws-support@amazon.com"
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "category": "payment",
+      "detect_patterns": ["stripe.com", "stripe_api_key", "sk_live_", "sk_test_"],
+      "cancel_url": "https://dashboard.stripe.com/settings/billing/overview",
+      "support_email": "support@stripe.com"
+    },
+    {
+      "id": "paypal",
+      "name": "PayPal",
+      "category": "payment",
+      "detect_patterns": ["paypal.com", "paypal"],
+      "cancel_url": "https://www.paypal.com/myaccount/autopay/",
+      "support_email": "service@paypal.com"
+    },
+    {
+      "id": "dropbox",
+      "name": "Dropbox",
+      "category": "storage",
+      "detect_patterns": ["dropbox.com", "dropbox"],
+      "cancel_url": "https://www.dropbox.com/account/billing",
+      "support_email": "support@dropbox.com"
+    },
+    {
+      "id": "google_workspace",
+      "name": "Google Workspace",
+      "category": "productivity",
+      "detect_patterns": ["googleapis.com", "google.com", " workspace.google.com"],
+      "cancel_url": "https://admin.google.com/",
+      "support_email": "support@google.com"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "category": "development",
+      "detect_patterns": ["github.com", "github.io"],
+      "cancel_url": "https://github.com/settings/billing",
+      "support_email": "support@github.com"
+    },
+    {
+      "id": "digitalocean",
+      "name": "DigitalOcean",
+      "category": "cloud",
+      "detect_patterns": ["digitalocean.com", "digitalocean"],
+      "cancel_url": "https://cloud.digitalocean.com/",
+      "support_email": "support@digitalocean.com"
+    },
+    {
+      "id": "linode",
+      "name": "Linode",
+      "category": "cloud",
+      "detect_patterns": ["linode.com", "linode"],
+      "cancel_url": "https://manager.linode.com/",
+      "support_email": "support@linode.com"
+    },
+    {
+      "id": "vultr",
+      "name": "Vultr",
+      "category": "cloud",
+      "detect_patterns": ["vultr.com", "vultr"],
+      "cancel_url": "https://my.vultr.com/",
+      "support_email": "support@vultr.com"
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "category": "infrastructure",
+      "detect_patterns": ["cloudflare.com", "cloudflare"],
+      "cancel_url": "https://dash.cloudflare.com/",
+      "support_email": "support@cloudflare.com"
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "category": "communication",
+      "detect_patterns": ["slack.com", "slack"],
+      "cancel_url": "https://my.slack.com/account/billing",
+      "support_email": "support@slack.com"
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "category": "communication",
+      "detect_patterns": ["zoom.us", "zoom"],
+      "cancel_url": "https://zoom.us/account/billing",
+      "support_email": "support@zoom.us"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "category": "productivity",
+      "detect_patterns": ["notion.so", "notion"],
+      "cancel_url": "https://www.notion.so/my-account",
+      "support_email": "support@notion.so"
+    },
+    {
+      "id": "airtable",
+      "name": "Airtable",
+      "category": "database",
+      "detect_patterns": ["airtable.com", "airtable"],
+      "cancel_url": "https://airtable.com/account",
+      "support_email": "support@airtable.com"
+    },
+    {
+      "id": "calendly",
+      "name": "Calendly",
+      "category": "scheduling",
+      "detect_patterns": ["calendly.com", "calendly"],
+      "cancel_url": "https://calendly.com/account/billing",
+      "support_email": "hello@calendly.com"
+    },
+    {
+      "id": "zapier",
+      "name": "Zapier",
+      "category": "automation",
+      "detect_patterns": ["zapier.com", "zapier"],
+      "cancel_url": "https://zapier.com/app/billing",
+      "support_email": "support@zapier.com"
+    },
+    {
+      "id": "make",
+      "name": "Make (Integromat)",
+      "category": "automation",
+      "detect_patterns": ["make.com", "integromat.com"],
+      "cancel_url": "https://www.make.com/en/contact-support",
+      "support_email": "support@make.com"
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "category": "writing",
+      "detect_patterns": ["grammarly.com", "grammarly"],
+      "cancel_url": "https://app.grammarly.com/accounts/billing",
+      "support_email": "support@grammarly.com"
+    },
+    {
+      "id": "adobe",
+      "name": "Adobe Creative Cloud",
+      "category": "design",
+      "detect_patterns": ["adobe.com", "adobe"],
+      "cancel_url": "https://account.adobe.com/plans",
+      "support_email": "support@adobe.com"
+    },
+    {
+      "id": "microsoft365",
+      "name": "Microsoft 365",
+      "category": "productivity",
+      "detect_patterns": ["microsoft.com", "office365", "microsoft365"],
+      "cancel_url": "https://account.microsoft.com/services",
+      "support_email": "support@microsoft.com"
+    },
+    {
+      "id": "twilio",
+      "name": "Twilio",
+      "category": "communication-api",
+      "detect_patterns": ["twilio.com", "twilio"],
+      "cancel_url": "https://www.twilio.com/console/billing",
+      "support_email": "support@twilio.com"
+    },
+    {
+      "id": "sendgrid",
+      "name": "SendGrid",
+      "category": "email-api",
+      "detect_patterns": ["sendgrid.com", "sendgrid"],
+      "cancel_url": "https://app.sendgrid.com/settings/billing",
+      "support_email": "support@sendgrid.com"
+    },
+    {
+      "id": "mailgun",
+      "name": "Mailgun",
+      "category": "email-api",
+      "detect_patterns": ["mailgun.com", "mailgun"],
+      "cancel_url": "https://app.mailgun.com/billing",
+      "support_email": "support@mailgun.com"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI API",
+      "category": "ai-api",
+      "detect_patterns": ["openai.com", "openai", "sk-openai-"],
+      "cancel_url": "https://platform.openai.com/usage",
+      "support_email": "support@openai.com"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic API",
+      "category": "ai-api",
+      "detect_patterns": ["anthropic.com", "anthropic", "sk-ant-"],
+      "cancel_url": "https://console.anthropic.com/usage",
+      "support_email": "support@anthropic.com"
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "category": "ecommerce",
+      "detect_patterns": ["shopify.com", "shopify"],
+      "cancel_url": "https://www.shopify.com/admin/billing",
+      "support_email": "support@shopify.com"
+    }
+  ]
+}
