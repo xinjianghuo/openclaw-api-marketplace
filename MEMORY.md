@@ -108,15 +108,20 @@ Created 4 skill packages ready for ClawHub upload (all free + donation-funded).
 - Tron (TRX/USDT): TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih
 
 ### Upload Status
-- ✅ All meta.json created and funded
-- ✅ README.md updated with donor message
-- ✅ Manifest created: CLAUHUB-UPLOAD-MANIFEST.md
-- ⏳ Awaiting user to manually upload ZIPs to ClawHub (no API)
+- ❌ **DEPRECATED** (2026-04-01 10:55) – No API automation, manual upload burden too high
+- ✅ Alternative: All 4 skills published to npm (free + donation-funded)
+- ✅ Source code on GitHub: xinjianghuo/openclaw-api-marketplace
 
-### Next Steps
-1. User uploads 4 ZIP packages to ClawHub dashboard
-2. Wait 24-48h approval
-3. Post-launch promotion (Dev.to, Twitter, Reddit)
+### Reason for Deprecation
+- No API for automated upload
+- Manual web form filing + screenshots required
+- Automation cost >> benefits
+- npm + GitHub provide better reach and automation
+
+### Next Steps (Post-ClawHub)
+1. Promote npm packages via docs, tutorials, social
+2. Focus on GitHub stars/forks for discoverability
+3. Consider Docker Hub container publishing (optional)
 
 ---
 
@@ -133,3 +138,35 @@ Created 4 skill packages ready for ClawHub upload (all free + donation-funded).
 ### Notes
 - API key for web search not available in environment; opportunity scanning requires fix
 - Continue monitoring; proceed with manual checks until resolved
+
+---
+
+## 2026-04-01: ClawHub Deprecation (10:55)
+
+### Decision
+ClawHub platform marked **deprecated** for automated distribution.
+
+### Reason
+- **No API**: Cannot automate upload process
+- **Manual overhead**: Packaging, screenshots, web form submission
+- **Low ROI**: 4 skills ready but manual effort > automation benefits
+- **Alternatives available**: npm + GitHub provide better automation
+
+### Current State
+- ✅ All 4 skills already published to **npm**:
+  - `openclaw-idea-validator`
+  - `openclaw-opportunity-scanner`
+  - `openclaw-node-connection-doctor`
+  - `ocl-vercel-deploy`
+- ✅ Code pushed to **GitHub**: `xinjianghuo/openclaw-api-marketplace`
+- ❌ ClawHub upload: **Aborted** – no automation, no manual execution
+
+### Impact
+- Skills distribution now via npm (package managers) + GitHub (source)
+- ClawHub-related documentation moved to `CLAUHUB-UPLOAD-MANIFEST.md` (deprecated status)
+- No future ClawHub uploads unless API becomes available
+
+### Action Taken
+- Updated `CLAUHUB-UPLOAD-MANIFEST.md` with deprecation notice
+- Updated `HEARTBEAT.md` to remove ClawHub checks
+- Focus shifted to npm/GitHub promotion strategies

@@ -68,5 +68,6 @@ node scripts/register-paypal-webhook.js
 - ⚠️ **待办**：获取 VERCEL_TOKEN（需用户操作）
 - ⚠️ **依赖**：Vercel 环境变量同步
 - ⚠️ **机会扫描**：Brave API 未配置 → 已使用 searxng-bangs 替代（待测试）
+- ❌ **ClawHub**: 已弃用（无API自动化，手动上传成本过高）；改用 npm + GitHub 分发
 
 请提供 VERCEL_TOKEN，我将自动执行部署命令。

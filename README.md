@@ -82,7 +82,7 @@
 **等待事项**:
 1. ⏳ 用户完成 Gumroad 购买测试 (验证端到端流程)
 2. ⏳ 用户提供 Reddit API 密钥 (Opportunity Scanner 自动化)
-3. ⏳ 用户决定 ClawHub 上传时机
+3. ❌ ClawHub 已弃用 (无API自动化，手动成本高，转向npm+GitHub分发)
 
 **下一步行动**:
 - 如果用户完成购买测试 → 启动 Reddit 推广 (48h 分发黑客)

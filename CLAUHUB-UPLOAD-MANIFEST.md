@@ -1,101 +1,56 @@
-# ClawHub Upload Manifest
+# ⚠️ CLAWHUB UPLOAD - DEPRECATED
 
-**Date**: 2026-03-31
-**API Token**: clh_uFcn4p7GWswXl2jX70bnp82iNJTcWt2FoKQWEi-dIEg
-**Upload Method**: Manual web upload (ZIP packages)
+**Status**: DEPRECATED (2026-04-01)
+**Reason**: No API automation support – requires manual web upload
+**Decision**: Marked as deprecated by user order (2026-04-01 10:55)
 
 ---
 
-## 📦 Skills Ready for Upload
+## ❌ Why ClawHub is Deprecated
 
-### 1. Idea Validator
-- **Slug**: `idea-validator`
-- **Name**: Idea Validator
-- **Pricing**: Free
-- **Funding**:
-  - PayPal: algea@163.com
-  - Tron: TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih
-- **Package**: `skills\idea-validator\` (zip before upload)
-- **Category**: productivity
-- **Tags**: validation, mom-test, mvp, startup
+| Issue | Impact |
+|-------|--------|
+| No API for automated upload | Entirely manual process, cannot integrate into CI/CD |
+| No CLI tool | No `clawhub publish` automation |
+| Extra overhead | Packaging, screenshots, web form filling |
+| Low ROI | 4 skills ready, but manual effort not justified |
 
-**Package Structure**:
+---
+
+## ✅ **Alternative Distribution Channels** (已配置)
+
+| 平台 | 状态 | 包名 |
+|------|------|------|
+| **npm** | ✅ 已发布 | `openclaw-idea-validator`, `openclaw-opportunity-scanner`, `openclaw-node-connection-doctor`, `ocl-vercel-deploy` |
+| **GitHub** | ✅ 已推送 | `xinjianghuo/openclaw-api-marketplace` |
+| **Vercel** | ✅ 部署 | API Marketplace 产品本身 |
+
+---
+
+## 📦 **技能包当前状态**
+
+所有 4 个技能已发布到 npm，可直接安装使用：
+
+```bash
+npm install -g openclaw-idea-validator
+npm install -g openclaw-opportunity-scanner
+npm install -g openclaw-node-connection-doctor
+npm install -g ocl-vercel-deploy
 ```
-idea-validator/
-├── SKILL.md
-├── scripts/
-│   └── validator.js
-├── references/
-│   └── mom-test-questions.md
-├── screenshots/
-├── README.md
-└── .clawhub/
-    └── meta.json
-```
 
 ---
 
-### 2. Opportunity Scanner
-- **Slug**: `opportunity-scanner`
-- **Name**: Opportunity Scanner
-- **Pricing**: Free
-- **Funding**:
-  - PayPal: algea@163.com
-  - Tron: TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih
-- **Package**: `skills\opportunity-scanner\`
-- **Category**: research
-- **Tags**: opportunity, research, microsaas, validation
+## 🔄 **如果需要重新启用 ClawHub**
+
+1. 手动访问 https://clawhub.ai/dashboard
+2. 上传 `skills/*` 文件夹的 ZIP 包
+3. 填写元数据（各技能有 `.clawhub/meta.json`）
+4. 等待 24-48h 审核
+
+**不推荐** – 自动化成本 > 收益
 
 ---
 
-### 3. Node Connection Doctor
-- **Slug**: `node-connection-doctor`
-- **Name**: Node Connection Doctor
-- **Pricing**: Free
-- **Funding**: Same as above
-- **Package**: `skills\node-connection-doctor\`
-- **Category**: troubleshooting
-- **Tags**: openclaw, diagnostics, network, repair
-
----
-
-### 4. Vercel Deploy
-- **Slug**: `vercel-deploy`
-- **Name**: Vercel Deploy
-- **Pricing**: Free
-- **Funding**: Same as above
-- **Package**: `skills\vercel-deploy\`
-- **Category**: devops
-- **Tags**: vercel, deployment, devops, cicd
-
----
-
-## 📝 Upload Steps
-
-1. Go to https://clawhub.ai/dashboard/skills/create
-2. For each skill:
-   - Upload ZIP (create from the folder)
-   - Verify auto-filled fields from `meta.json`
-   - Add screenshots (optional, can add later)
-   - Submit for review
-3. Wait 24-48h for approval
-
----
-
-## 🎯 Expected Outcome
-
-- **Immediate**: 4 free skills published on ClawHub
-- **Revenue**: Direct donations via Tron/PayPal (no platform fee)
-- **Exposure**: OpenClaw community + search traffic
-- **Next**: Promote on Dev.to, Twitter, Reddit
-
----
-
-## 🏷️ All Skills Tagline (Free + Donations)
-
-> "Free skill. If it helps you, consider supporting my work via PayPal or Tron. Thank you!"
-
----
-
-**Status**: ✅ All packages ready for upload  
-**Next**: User to manually upload to ClawHub (or provide automated login if possible)
+**Deprecated**: 2026-04-01
+**By**: 用户指令 (无水乙醇)
+**替代方案**: npm + GitHub 双发布
