@@ -1,0 +1,42 @@
+# Site settings
+title: OpenClaw 赚钱实战指南
+email: your@email.com
+description: >-
+  真实记录用 OpenClaw 自动化工具赚钱的案例、技术方案和变现策略。
+baseurl: ""  # Vercel 使用根路径，不要子目录
+url: "https://your-project.vercel.app"  # 部署后替换为实际 URL
+twitter_username: your_twitter
+github_username:  yourusername
+minimal_mistakes_skin: default
+search: true
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

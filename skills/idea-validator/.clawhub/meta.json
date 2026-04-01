@@ -1,0 +1,23 @@
+{
+  "slug": "idea-validator",
+  "name": "Idea Validator",
+  "description": "Validate product ideas using the Mom Test framework. Input a brief product description, output a set of validation questions that reveal if customers will actually pay. Includes willingness-to-pay prediction based on pain patterns.",
+  "version": "1.0.0",
+  "author": {
+    "name": "无水乙醇",
+    "email": "xinjiang.huo@gmail.com",
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih"
+  },
+  "pricing": {
+    "type": "free"
+  },
+  "category": "productivity",
+  "tags": ["validation", "mom-test", "mvp", "startup"],
+  "license": "MIT",
+  "funding": {
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih",
+    "message": "If this skill helped you, consider supporting my work. Thank you!"
+  }
+}

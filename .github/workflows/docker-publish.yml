@@ -1,0 +1,45 @@
+# GitHub Actions Workflow for Docker Hub Publishing
+
+name: Publish Docker Images
+
+on:
+  push:
+    branches: [ main, master ]
+    paths: [ 'docker/**' ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Idea Validator
+        run: |
+          docker build -t algeafok/idea-validator:latest -f docker/idea-validator/Dockerfile .
+          docker push algeafok/idea-validator:latest
+
+      - name: Build and push Opportunity Scanner
+        run: |
+          docker build -t algeafok/opportunity-scanner:latest -f docker/opportunity-scanner/Dockerfile .
+          docker push algeafok/opportunity-scanner:latest
+
+      - name: Build and push Node Connection Doctor
+        run: |
+          docker build -t algeafok/node-connection-doctor:latest -f docker/node-connection-doctor/Dockerfile .
+          docker push algeafok/node-connection-doctor:latest
+
+      - name: Build and push Vercel Deploy
+        run: |
+          docker build -t algeafok/vercel-deploy:latest -f docker/vercel-deploy/Dockerfile .
+          docker push algeafok/vercel-deploy:latest

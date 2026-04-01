@@ -1,0 +1,31 @@
+{
+  "name": "openclaw-node-connection-doctor",
+  "version": "1.0.0",
+  "description": "Automatically diagnose and fix OpenClaw node connection issues. Handles QR/setup code failures, gateway config errors, Tailscale/VPN problems.",
+  "main": "scripts/diagnose.js",
+  "bin": {
+    "node-connection-doctor": "scripts/diagnose.js"
+  },
+  "scripts": {
+    "test": "node scripts/diagnose.js --help"
+  },
+  "keywords": ["openclaw", "diagnostics", "network", "repair", "troubleshooting"],
+  "author": {
+    "name": "无水乙醇",
+    "email": "xinjiang.huo@gmail.com"
+  },
+  "funding": {
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih",
+    "message": "Free diagnostics. If the fix saves you time, consider supporting this project. Thank you!"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openclaw/api-marketplace"
+  },
+  "os": ["darwin", "linux", "win32"],
+  "engines": {
+    "node": ">=18.x"
+  }
+}

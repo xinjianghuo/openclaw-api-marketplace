@@ -1,0 +1,23 @@
+{
+  "slug": "opportunity-scanner",
+  "name": "Opportunity Scanner",
+  "description": "Zero-cost micro-SaaS opportunity discovery from Reddit + GitHub. Scans real user pain points, ranks opportunities by pain score, and provides zero-cost validation steps. No API keys required - uses only public data.",
+  "version": "1.0.0",
+  "author": {
+    "name": "无水乙醇",
+    "email": "xinjiang.huo@gmail.com",
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih"
+  },
+  "pricing": {
+    "type": "free"
+  },
+  "category": "research",
+  "tags": ["opportunity", "research", "microsaas", "validation"],
+  "license": "MIT",
+  "funding": {
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih",
+    "message": "Free to use. If you find valuable opportunities, a small tip keeps me scanning more. Thank you!"
+  }
+}

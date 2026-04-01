@@ -1,0 +1,31 @@
+{
+  "name": "openclaw-opportunity-scanner",
+  "version": "1.0.0",
+  "description": "Zero-cost micro-SaaS opportunity discovery from Reddit + GitHub. Scans real user pain points, ranks opportunities, provides validation steps. No API keys required.",
+  "main": "scripts/scanner.js",
+  "bin": {
+    "opportunity-scanner": "scripts/scanner.js"
+  },
+  "scripts": {
+    "test": "node scripts/scanner.js --help"
+  },
+  "keywords": ["openclaw", "opportunity", "microsaas", "validation", "research"],
+  "author": {
+    "name": "无水乙醇",
+    "email": "xinjiang.huo@gmail.com"
+  },
+  "funding": {
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih",
+    "message": "Free to use. If you find valuable opportunities, a small tip keeps me scanning more. Thank you!"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openclaw/api-marketplace"
+  },
+  "os": ["darwin", "linux", "win32"],
+  "engines": {
+    "node": ">=18.x"
+  }
+}

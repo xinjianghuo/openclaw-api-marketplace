@@ -1,0 +1,23 @@
+{
+  "slug": "node-connection-doctor",
+  "name": "Node Connection Doctor",
+  "description": "Automatically diagnose and fix OpenClaw node connection issues. Handles QR/setup code failures, gateway configuration errors, Tailscale/VPN problems. One-click repair with detailed diagnostics.",
+  "version": "1.0.0",
+  "author": {
+    "name": "无水乙醇",
+    "email": "xinjiang.huo@gmail.com",
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih"
+  },
+  "pricing": {
+    "type": "free"
+  },
+  "category": "troubleshooting",
+  "tags": ["openclaw", "diagnostics", "network", "repair"],
+  "license": "MIT",
+  "funding": {
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih",
+    "message": "Free diagnostics. If the fix saves you time, consider supporting this project. Thank you!"
+  }
+}

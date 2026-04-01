@@ -1,0 +1,72 @@
+{
+  "generated": "2026-03-25T06:39:34.597Z",
+  "totalScanned": 5,
+  "topOpportunities": [
+    {
+      "opportunityId": "opp-1774420774595-9u5z2yfd9",
+      "title": "Show HN: OpenClaw script to auto-recover failed Stripe payments",
+      "url": "https://news.ycombinator.com/item?id=12345678",
+      "source": "hackernews",
+      "score": 6,
+      "painLevel": 15,
+      "competition": "low",
+      "revenuePotential": "$$",
+      "validationDays": 3,
+      "suggestedMVP": "Webhook listener + retry logic for failed Stripe payments (1 week)"
+    },
+    {
+      "opportunityId": "opp-1774420774595-0qklktggf",
+      "title": "OpenClaw API costs are killing me - $300/mo bill!",
+      "url": "https://reddit.com/r/OpenClaw/comments/xyz123",
+      "source": "reddit",
+      "score": 5.8,
+      "painLevel": 14,
+      "competition": "low",
+      "revenuePotential": "$$",
+      "validationDays": 3,
+      "suggestedMVP": "OpenClaw agent that queries billing API + Slack/Discord alerts (2 weeks build)"
+    },
+    {
+      "opportunityId": "opp-1774420774595-7gpxj8j2l",
+      "title": "OpenClaw Cost Monitor - track your API spend in real-time",
+      "url": "https://www.producthunt.com/posts/openclaw-cost-monitor",
+      "source": "producthunt",
+      "score": 4.2,
+      "painLevel": 6,
+      "competition": "low",
+      "revenuePotential": "$$",
+      "validationDays": 3,
+      "suggestedMVP": "OpenClaw agent that queries billing API + Slack/Discord alerts (2 weeks build)"
+    },
+    {
+      "opportunityId": "opp-1774420774595-lzkx9f5v0",
+      "title": "Looking for OpenClaw deployment service - budget $500",
+      "url": "https://reddit.com/r/indiehackers/comments/abc456",
+      "source": "reddit",
+      "score": 3,
+      "painLevel": 0,
+      "competition": "low",
+      "revenuePotential": "$$",
+      "validationDays": 3,
+      "suggestedMVP": "Offer deployment service: VPS setup + 3 skills + docs (3-5 days per client)"
+    },
+    {
+      "opportunityId": "opp-1774420774595-i4bsah05k",
+      "title": "Need: Shopify SEO automation for OpenClaw",
+      "url": "https://github.com/shopify/shopify/issues/789",
+      "source": "github",
+      "score": 1.8,
+      "painLevel": 4,
+      "competition": "medium",
+      "revenuePotential": "$$",
+      "validationDays": 3,
+      "suggestedMVP": "OpenClaw skill: run Lighthouse on Shopify stores, generate SEO report (2 weeks)"
+    }
+  ],
+  "statistics": {
+    "avgScore": 4.16,
+    "highPainCount": 2,
+    "lowCompCount": 4,
+    "highRevCount": 0
+  }
+}

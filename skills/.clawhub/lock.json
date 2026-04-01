@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "vercel-deploy": {
+      "version": "1.0.0",
+      "installedAt": 1774909865000
+    },
+    "searxng-bangs": {
+      "version": "1.0.0",
+      "installedAt": 1774909865124
+    }
+  }
+}

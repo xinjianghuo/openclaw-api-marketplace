@@ -1,0 +1,392 @@
+openapi: 3.0.3
+info:
+  title: Node Doctor API
+  description: OpenClaw node connection diagnosis API via Gumroad license verification
+  version: 1.0.0
+  contact:
+    email: xinjiang.huo@gmail.com
+    name: JARVIS
+  license:
+    name: Proprietary
+    url: https://example.com/license
+
+servers:
+  - url: https://api-marketplace-pearl.vercel.app
+    description: Production server
+    variables:
+      version:
+        default: v1
+        description: API version (currently only v1 supported)
+
+tags:
+  - name: Health
+    description: Health check endpoints
+  - name: API
+    description: Core API endpoints
+
+paths:
+  /api/health:
+    get:
+      summary: Health check endpoint
+      tags:
+        - Health
+      operationId: getHealth
+      responses:
+        '200':
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+              example:
+                status: ok
+                timestamp: "2026-03-28T04:53:30.706Z"
+                uptime: 12345
+                rateLimitStats:
+                  totalKeys: 15
+                  activeWindows: 12
+                  totalRequests: 345
+
+  /api/metrics:
+    get:
+      summary: Get API metrics (monitoring)
+      tags:
+        - Health
+      operationId: getMetrics
+      responses:
+        '200':
+          description: Metrics data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsResponse'
+              example:
+                timestamp: "2026-03-28T04:53:30.706Z"
+                requests: 1234
+                activeWindows: 12
+                uniqueUsers: 15
+
+  /api/usage:
+    get:
+      summary: Check remaining API calls for a license
+      tags:
+        - API
+      operationId: getUsage
+      parameters:
+        - name: email
+          in: query
+          required: true
+          schema:
+            type: string
+            format: email
+          description: Purchase email for verification
+      responses:
+        '200':
+          description: Usage information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsageResponse'
+              example:
+                email: "customer@example.com"
+                remainingCalls: 95
+                licenseType: calls
+                purchaser:
+                  email: "customer@example.com"
+                  name: "John Doe"
+                  orderNumber: "ABC123"
+                  saleId: "sale_456"
+        '400':
+          description: Missing email parameter
+        '403':
+          description: Invalid or expired license
+      security:
+        - emailAuth: []
+
+  /api/run:
+    post:
+      summary: Execute a skill with license verification
+      tags:
+        - API
+      operationId: runSkill
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunRequest'
+            examples:
+              testMode:
+                summary: Test mode (bypass verification)
+                value:
+                  skill: node-connection-doctor
+                  input:
+                    verbose: true
+                  email: test@example.com
+                  test: true
+              production:
+                summary: Production (verify purchase)
+                value:
+                  skill: node-connection-doctor
+                  input:
+                    verbose: false
+                  email: customer@example.com
+      responses:
+        '200':
+          description: Skill executed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunResponse'
+              examples:
+                testResponse:
+                  summary: Test mode response
+                  value:
+                    success: true
+                    result:
+                      timestamp: "2026-03-28T04:50:00.000Z"
+                      healthScore: 95
+                      summary: Healthy
+                      steps:
+                        - name: Gateway Status
+                          ok: true
+                          output: "..."
+                    remainingCalls: 99
+                    licenseType: calls
+                    test: true
+                    requestId: req_abc123
+        '400':
+          description: Bad request (missing parameters)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                error:
+                  code: VALIDATION_ERROR
+                  message: Missing required field: skill
+                  timestamp: "2026-03-28T04:53:30.706Z"
+        '403':
+          description: Forbidden (purchase not found or quota exceeded)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                error:
+                  code: BUSINESS_ERROR
+                  message: Invalid or expired license
+                  details:
+                    reason: No purchases found for this email and product
+                  timestamp: "2026-03-28T04:53:30.706Z"
+        '404':
+          description: Skill not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                error:
+                  code: RATE_LIMIT_EXCEEDED
+                  message: Too many requests. Please try again later.
+                  details:
+                    resetAt: "2026-03-28T05:53:30.000Z"
+                    retryAfter: 3600
+                  timestamp: "2026-03-28T04:53:30.706Z"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: ok
+        timestamp:
+          type: string
+          format: date-time
+        uptime:
+          type: number
+          description: Server uptime in seconds
+        rateLimitStats:
+          $ref: '#/components/schemas/RateLimitStats'
+
+    MetricsResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        requests:
+          type: number
+          description: Total requests in current window
+        activeWindows:
+          type: number
+          description: Number of active rate limit windows
+        uniqueUsers:
+          type: number
+          description: Number of unique emails tracked
+
+    RunRequest:
+      type: object
+      required:
+        - skill
+      properties:
+        skill:
+          type: string
+          enum:
+            - node-connection-doctor
+          description: Skill to execute
+        input:
+          type: object
+          description: Skill-specific input parameters
+          properties:
+            verbose:
+              type: boolean
+              description: Return detailed output
+        email:
+          type: string
+          format: email
+          description: Email used for purchase (for verification)
+        test:
+          type: boolean
+          description: Skip verification (for development/testing)
+
+    RunResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        result:
+          $ref: '#/components/schemas/DiagnosisResult'
+        remainingCalls:
+          type: number
+          description: Remaining API calls for this license
+        licenseType:
+          type: string
+          enum:
+            - calls
+        purchaser:
+          $ref: '#/components/schemas/Purchaser'
+        requestId:
+          type: string
+          description: Unique request identifier
+        test:
+          type: boolean
+          description: Whether test mode was used
+
+    DiagnosisResult:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        healthScore:
+          type: number
+          description: Overall health score (0-100)
+        summary:
+          type: string
+          description: One-line summary
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/DiagnosisStep'
+
+    DiagnosisStep:
+      type: object
+      properties:
+        name:
+          type: string
+        ok:
+          type: boolean
+        output:
+          type: string
+        details:
+          type: object
+
+    Purchaser:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        orderNumber:
+          type: string
+        saleId:
+          type: string
+
+    UsageResponse:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email used for usage query
+        remainingCalls:
+          type: number
+          description: Remaining API calls on this license
+        licenseType:
+          type: string
+          enum:
+            - calls
+          description: Type of license (always 'calls')
+        purchaser:
+          $ref: '#/components/schemas/Purchaser'
+          description: Purchaser information
+
+    RateLimitStats:
+      type: object
+      properties:
+        totalKeys:
+          type: number
+        activeWindows:
+          type: number
+        totalRequests:
+          type: number
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+              nullable: true
+            timestamp:
+              type: string
+              format: date-time
+            requestId:
+              type: string
+              nullable: true
+
+security:
+  - emailAuth: []
+    description: API requires valid purchase email for access
+
+# Custom security scheme (email-based)
+components:
+  securitySchemes:
+    emailAuth:
+      type: apiKey
+      in: body
+      name: email
+      description: Purchase email for verification

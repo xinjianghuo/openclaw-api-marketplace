@@ -1,0 +1,18 @@
+# 🚀 Clash 优化配置片段
+# 将以下内容插入到 rules: 部分的最上方
+
+rules:
+  # === 自定义规则 (置于最优先) ===
+  - DOMAIN-SUFFIX,reddit.com,US_3  # 使用美国节点 (替换为实际节点名)
+  - DOMAIN-SUFFIX,www.reddit.com,US_3
+  - DOMAIN-SUFFIX,old.reddit.com,US_3
+  - DOMAIN-SUFFIX,redditmedia.com,US_3
+  - DOMAIN-SUFFIX,redd.it,US_3
+  
+  # === 原有规则继续 ===
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,localhost,DIRECT
+  - ...
+
+# 策略组建议: 创建一个名为 "US_3" 的 select 组，只包含可靠的美国节点
+# 或者在现有策略组中，确保 "自动选择" 包含健康的美国节点

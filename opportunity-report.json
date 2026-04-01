@@ -1,0 +1,156 @@
+{
+  "scanTime": "2026-03-26T01:54:50.455Z",
+  "duration": 38987,
+  "subredditsScanned": [
+    "microsaas",
+    "startups",
+    "sideproject",
+    "entrepreneur",
+    "selfhosted",
+    "saas"
+  ],
+  "totalRaw": 60,
+  "totalUnique": 49,
+  "top20": [
+    {
+      "rank": 1,
+      "title": "Software as a Service businesses run by a very small team.",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 2,
+      "title": "Would anyone pay for this skill?",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 3,
+      "title": "We are aiming to have 1000 subscribed users by the summer. I hope I don't mess up Stripe again. Wish me luck!!!",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 4,
+      "title": "Market your SaaS product by turning it's URL into pieces of viral organic posts for X, Threads, Facebook, LinkedIn, and Reddit. ",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 5,
+      "title": "I launched my SaaS 3 days ago and got 89 people on the waitlist.",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 6,
+      "title": "The question I want to ask this community honestly: how many of you are actively measuring AI citation traffic separately in your analytics right now?",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 7,
+      "title": "I'm building Nourish, an AI powered tool for gut health. ",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 8,
+      "title": "Drop your saas with one sentence i review it and give a honest feedback 'no catch'",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 9,
+      "title": "And I don't think neither of those two options is better since we need to pick either having two person pitch a 10-minute deck, or not having the CEO pitch his own product.",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 10,
+      "title": "what I wish I knew before starting an AI agent subscription business - I will not promote",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 11,
+      "title": "[I will not promote] Got tired of spammy email marketing, so we tried the exact opposite: snail mail. Here's how it went.",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 12,
+      "title": "We're a small B2B SaaS startup. We were so fed up with getting garbage AI emails in our own inboxes that we got curious: what's the least spammy way to reach someone cold? ",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 13,
+      "title": "When I was using Openclaw today, it can't help me solve my biggest headache - Web Scraping the data I want from different websites. ",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 14,
+      "title": "Like many of us here, I've been iterating on a product and trying to get the word out. I built a go-to-market advisor tool to help companies create strategies and conduct experiments. ",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 15,
+      "title": "I'm 15 and built my first product. Social media flopped. DMs are my only channel. What am I missing? (I will not promote)",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 16,
+      "title": "Built a tiny tool 3 weeks ago, now 57 people are using it",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 17,
+      "title": "I got tired of ChatGPT telling me every idea I had was \"a great idea with huge potential\".. so I built something to actually stress-test them quickly",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 18,
+      "title": "I built a simple app to stop myself from losing touch with people",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 19,
+      "title": "I just launched a small app called KeepMeClose and wanted to share it here. ",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    },
+    {
+      "rank": 20,
+      "title": "I didn’t want a heavy productivity app or something that felt like a chore. I just wanted something simple that would remind me to check in. ",
+      "source": "Reddit",
+      "potential": "MEDIUM",
+      "score": 10
+    }
+  ]
+}

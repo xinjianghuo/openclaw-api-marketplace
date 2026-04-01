@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress Media Cloud Offloader - Early Access</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #f5f5f5; }
+        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #1a1a1a; }
+        .subtitle { color: #666; font-size: 1.1rem; margin-bottom: 30px; }
+        .price { font-size: 2.5rem; color: #00a651; font-weight: bold; margin: 20px 0; }
+        .price small { font-size: 1rem; color: #888; font-weight: normal; }
+        .features { list-style: none; margin: 30px 0; }
+        .features li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .features li:before { content: "✓ "; color: #00a651; font-weight: bold; margin-right: 8px; }
+        .cta-button { display: inline-block; background: #0073aa; color: white; padding: 15px 40px; border-radius: 6px; text-decoration: none; font-size: 1.2rem; margin: 20px 0; transition: background 0.2s; }
+        .cta-button:hover { background: #005a87; }
+        .form-container { background: #f9f9f9; padding: 30px; border-radius: 8px; margin-top: 30px; border: 2px dashed #ddd; }
+        .form-container h3 { margin-bottom: 15px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: 500; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; }
+        .required:after { content: " *"; color: red; }
+        .submit-btn { background: #00a651; color: white; border: none; padding: 12px 30px; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+        .submit-btn:hover { background: #008f45; }
+        .note { font-size: 0.9rem; color: #666; margin-top: 10px; }
+        .badge { display: inline-block; background: #ff6b6b; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WordPress Media Cloud Offloader</h1>
+        <p class="subtitle">Automatically offload your WordPress media library to S3, Backblaze B2, or Cloudflare R2. Zero hosting storage costs. Early Access - Free for Life for First 20 Beta Testers.</p>
+        
+        <div class="price">$29/month <small>after beta</small> <span class="badge">EARLY ACCESS</span></div>
+        
+        <h2>🎯 What It Does</h2>
+        <ul class="features">
+            <li>Automatically upload new media to cloud storage (S3-compatible)</li>
+            <li>Serve optimized images via CDN (Cloudflare, Bunny, etc.)</li>
+            <li>One-click migration: offload existing media library</li>
+            <li>Delete local files after successful upload to save server space</li>
+            <li>WebP conversion & automatic image optimization</li>
+            <li>Backup & restore: always keep local copy option</li>
+            <li>Works with any hosting: no more "unlimited" hosting needed</li>
+        </ul>
+        
+        <a href="#waitlist" class="cta-button">👉 Join Early Access Waitlist</a>
+        
+        <p><em>No payment required. Free for life for first 20 beta testers who provide feedback.</em></p>
+        
+        <div class="form-container" id="waitlist">
+            <h3>📝 Join Early Access Waitlist</h3>
+            <p class="note">This is NOT a payment form. We're collecting emails to contact beta testers. Zero cost to join.</p>
+            
+            <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank">
+                <div class="form-group">
+                    <label class="required" for="email">Email Address</label>
+                    <input type="email" name="entry.EMAIL" id="email" required placeholder="you@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="pain">How painful is media storage for you? (1-10)</label>
+                    <select name="entry.PAIN" id="pain" required>
+                        <option value="">Select...</option>
+                        <option value="10">10 - Critical, running out of space</option>
+                        <option value="9">9 - Very painful</option>
+                        <option value="8">8 - Painful</option>
+                        <option value="7">7 - Moderately painful</option>
+                        <option value="6">6 - Somewhat annoying</option>
+                        <option value="5">5 - Neutral</option>
+                        <option value="4">4 - Not bad</option>
+                        <option value="3">3 - Minimal</option>
+                        <option value="2">2 - No issue</option>
+                        <option value="1">1 - Not applicable</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sites">How many WordPress sites do you manage?</label>
+                    <select name="entry.SITES" id="sites">
+                        <option value="1">Just 1</option>
+                        <option value="2-5">2-5</option>
+                        <option value="6-10">6-10</option>
+                        <option value="11+">11+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="current">Current solution for media storage?</label>
+                    <select name="entry.CURRENT" id="current">
+                        <option value="Host unlimited">Host "unlimited" hosting</option>
+                        <option value="S3">Amazon S3 / DO Spaces</option>
+                        <option value="Backblaze">Backblaze B2</option>
+                        <option value="Cloudflare">Cloudflare R2</option>
+                        <option value="Manual">Manual external storage</option>
+                        <option value="None">No solution yet (local only)</option>
+                        <option value="Other">Other (specify in comments)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="pay">Would you pay $29/month for this plugin?</label>
+                    <select name="entry.PAY" id="pay" required>
+                        <option value="">Select...</option>
+                        <option value="Yes">Yes, definitely</option>
+                        <option value="Maybe">Maybe, depends on features</option>
+                        <option value="No">No, too expensive</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="beta">Can I contact you for beta testing?</label>
+                    <select name="entry.BETA" id="beta" required>
+                        <option value="">Select...</option>
+                        <option value="Yes">Yes, I want early access</option>
+                        <option value="No">No, just interested</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn">Join Waitlist</button>
+            </form>
+            
+            <p class="note">⚡ We respect your privacy. No spam. Unsubscribe anytime.</p>
+        </div>
+        
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.9rem; color: #888;">
+            <p>Built with ❤️ by an indie developer. Part of the OpenClaw ecosystem.</p>
+            <p>Questions? Contact: <a href="https://github.com/yourusername">GitHub</a> or Reddit u/yourusername</p>
+        </div>
+    </div>
+    
+    <!-- Google Analytics (free) placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>

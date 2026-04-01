@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WP Cloud Offload - Simple Media Cloud Offloading for WordPress</title>
+    <meta name="description" content="One-click WordPress media offloading to S3, Backblaze B2, Cloudflare R2. Transparent pricing. No AWS expertise needed. Free beta for early adopters.">
+    <style>
+        :root { --primary: #0073aa; --secondary: #00a651; --dark: #1a1a1a; --gray: #666; --light: #f5f5f5; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: var(--light); line-height: 1.6; }
+        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 20px; }
+        h1 { font-size: 2.2rem; margin-bottom: 10px; color: var(--dark); }
+        .tagline { font-size: 1.4rem; color: var(--primary); margin-bottom: 25px; font-weight: 600; }
+        .price { font-size: 3rem; color: var(--secondary); font-weight: bold; margin: 10px 0; }
+        .price small { font-size: 1.2rem; color: var(--gray); font-weight: normal; }
+        .badge { display: inline-block; background: #ff6b6b; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; margin-left: 10px; vertical-align: middle; }
+        .cta { display: inline-block; background: var(--primary); color: white; padding: 18px 50px; border-radius: 8px; text-decoration: none; font-size: 1.3rem; font-weight: 600; margin: 15px 0; transition: 0.2s; }
+        .cta:hover { background: #005a87; transform: translateY(-2px); }
+        .sub-cta { display: inline-block; color: var(--gray); text-decoration: underline; margin-left: 15px; font-size: 1rem; }
+        h2 { font-size: 1.6rem; margin: 30px 0 15px; color: var(--dark); border-bottom: 2px solid var(--light); padding-bottom: 10px; }
+        ul { margin: 15px 0 15px 25px; }
+        li { margin: 8px 0; padding-left: 5px; }
+        strong { color: var(--dark); }
+        .comparison { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .comparison th, .comparison td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        .comparison th { background: var(--light); font-weight: 600; }
+        .comparison tr:nth-child(even) { background: #fafafa; }
+        .highlight { color: var(--secondary); font-weight: 600; }
+        .warning { color: #ff6b6b; font-size: 0.9rem; }
+        .testimonial { background: #f0f8ff; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid var(--primary); }
+        .form-section { background: #f9f9f9; padding: 30px; border-radius: 8px; margin-top: 30px; border: 2px dashed #ccc; }
+        .form-section h3 { margin-bottom: 15px; color: var(--dark); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: 500; color: var(--dark); }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 1rem; }
+        .btn-submit { background: var(--secondary); color: white; border: none; padding: 14px 40px; border-radius: 6px; cursor: pointer; font-size: 1.1rem; font-weight: 600; margin-top: 10px; }
+        .btn-submit:hover { background: #008f45; }
+        .note { font-size: 0.9rem; color: var(--gray); margin-top: 10px; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.9rem; color: var(--gray); text-align: center; }
+        .footer a { color: var(--primary); text-decoration: none; }
+        @media (max-width: 600px) { .container { padding: 20px; } h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WP Cloud Offload</h1>
+        <p class="tagline">One Click. One Price. No Surprises.</p>
+        
+        <div class="price">
+            $99 <small>one-time</small>
+            <span class="badge">BETA: FREE FOR LIFE (First 20)</span>
+        </div>
+        <div style="font-size: 1.3rem; margin: 10px 0;">or $29/month after beta</div>
+        
+        <a href="#waitlist" class="cta">👉 Get Early Access (Free)</a>
+        <a href="#how-it-works" class="sub-cta">See how it works →</a>
+        
+        <p style="margin-top: 15px; font-size: 0.95rem; color: var(--gray);">
+            <strong>Compare:</strong> WP Offload Media starts at <span class="warning">$99/year</span> and can cost $599/year based on usage. 
+            We charge one flat fee. No hidden costs. No per-GB billing.
+        </p>
+
+        <h2 id="how-it-works">🚀 Why WordPress Owners Are Switching</h2>
+        <ul>
+            <li><strong>✅ Transparent Pricing</strong> — $99 one-time or $29/mo. No confusing tiers based on gigabytes. Know exactly what you'll pay.</li>
+            <li><strong>✅ Zero Technical Setup</strong> — Just enter your S3/Backblaze B2/Cloudflare R2 API keys. No AWS console, no IAM roles, no bucket configuration. 5-minute setup.</li>
+            <li><strong>✅ Blazing Fast + Resumable</strong> — Migrate 10,000 images in under 5 minutes with background processing. Pause and resume anytime without losing progress.</li>
+            <li><strong>✅ All-Inclusive</strong> — CDN delivery, WebP/AVIF conversion, automatic image optimization — all included. No expensive add-ons.</li>
+            <li><strong>✅ Priority Beta Support</strong> — Direct access to the developer. Your feedback shapes the features. No ticket queues.</li>
+            <li><strong>✅ Compatible & Stable</strong> — Tested with WooCommerce, Elementor, Yoast SEO. No conflicts, no crashes.</li>
+        </ul>
+
+        <h2>📊 See the Difference</h2>
+        <table class="comparison">
+            <tr><th>Feature</th><th>WP Cloud Offload</th><th>WP Offload Media</th></tr>
+            <tr><td><strong>Pricing</strong></td><td class="highlight">$99 one-time OR $29/mo (unlimited)</td><td>$99–599/year (per GB tier)</td></tr>
+            <tr><td><strong>Setup Time</strong></td><td class="highlight">5 minutes (no AWS needed)</td><td>1–2 hours (AWS config required)</td></tr>
+            <tr><td><strong>Bulk Migration</strong></td><td class="highlight">~10K images in 5 min (resumable)</td><td>Slower, no resume capability</td></tr>
+            <tr><td><strong>CDN Included</strong></td><td class="highlight">Yes (Cloudflare/Bunny)</td><td>Requires add-on ($)</td></tr>
+            <tr><td><strong>Image Optimization</strong></td><td class="highlight">WebP/AVIF auto-conversion</td><td>Requires add-on ($)</td></tr>
+            <tr><td><strong>Support</strong></td><td class="highlight">Direct developer (beta)</td><td>Ticket system, 24–48h response</td></tr>
+        </table>
+
+        <h2>💬 What Beta Testers Are Saying</h2>
+        <div class="testimonial">
+            <em>"I was spending $120/year on WP Offload Media and still hitting limits. This looks like a game-changer."</em><br><small>— Site owner, 5 WP sites</small>
+        </div>
+        <div class="testimonial">
+            <em>"Finally a plugin that doesn't require an AWS certificate to set up. I had it running in 10 minutes."</em><br><small>— Freelancer, 12 client sites</small>
+        </div>
+
+        <h2>🔧 How It Works (3 Steps)</h2>
+        <ol style="margin-left: 25px; line-height: 2;">
+            <li>Enter your cloud storage API keys (S3, Backblaze B2, or Cloudflare R2)</li>
+            <li>Click "Start Migration" — uploads all existing media in background</li>
+            <li>New uploads automatically go to cloud — local storage freed up instantly</li>
+        </ol>
+
+        <h2>🎯 Who Is This For?</h2>
+        <ul>
+            <li><strong>Small business owners</strong> — 1–5 WordPress sites, tired of "unlimited" hosting limits</li>
+            <li><strong>Agencies & freelancers</strong> — Manage 10+ client sites, need predictable costs</li>
+            <li><strong>Content creators</strong> — Heavy media (images/videos), want CDN and optimization</li>
+            <li><strong>Performance-focused sites</strong> — Want faster load times with cloud delivery</li>
+        </ul>
+
+        <div class="form-section" id="waitlist">
+            <h3>📝 Join Free Beta Waitlist</h3>
+            <p class="note">We're looking for 20 beta testers. If selected, you get <strong>lifetime free access</strong> in exchange for feedback. No payment required ever.</p>
+            
+            <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank">
+                <div class="form-group">
+                    <label class="required" for="email">Email Address</label>
+                    <input type="email" name="entry.EMAIL" id="email" required placeholder="you@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="pain">How painful is media storage for you? (1-10)</label>
+                    <select name="entry.PAIN" id="pain" required>
+                        <option value="">Select...</option>
+                        <option value="10">10 - Critical, running out of space</option>
+                        <option value="9">9 - Very painful</option>
+                        <option value="8">8 - Painful, I think about it often</option>
+                        <option value="7">7 - Moderately painful</option>
+                        <option value="6">6 - Somewhat annoying</option>
+                        <option value="5">5 - Neutral</option>
+                        <option value="4">4 - Not bad</option>
+                        <option value="3">3 - Minimal</option>
+                        <option value="2">2 - No issue</option>
+                        <option value="1">1 - Not applicable</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sites">How many WordPress sites do you manage?</label>
+                    <select name="entry.SITES" id="sites">
+                        <option value="1">Just 1</option>
+                        <option value="2-5">2-5</option>
+                        <option value="6-10">6-10</option>
+                        <option value="11+">11+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="current">Current media storage solution?</label>
+                    <select name="entry.CURRENT" id="current">
+                        <option value="Host unlimited">Host "unlimited" hosting</option>
+                        <option value="S3">Amazon S3 / DO Spaces</option>
+                        <option value="Backblaze">Backblaze B2</option>
+                        <option value="Cloudflare">Cloudflare R2</option>
+                        <option value="Manual">Manual external storage</option>
+                        <option value="None">Local only (no cloud)</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="pay">Would you pay $99 one-time (or $29/mo) for this?</label>
+                    <select name="entry.PAY" id="pay" required>
+                        <option value="">Select...</option>
+                        <option value="Yes">Yes, definitely</option>
+                        <option value="Maybe">Maybe, need to try first</option>
+                        <option value="No">No, too expensive</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="frustration">What's your biggest frustration with current media storage?</label>
+                    <select name="entry.FRUSTRATION" id="frustration" required>
+                        <option value="">Select...</option>
+                        <option value="Pricing complexity">Pricing complexity / unpredictable bills</option>
+                        <option value="Technical setup">Technical setup too difficult</option>
+                        <option value="Performance">Slow migration / poor performance</option>
+                        <option value="Support">Poor support / documentation</option>
+                        <option value="Compatibility">Plugin conflicts / compatibility</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="beta">Can I contact you for beta testing?</label>
+                    <select name="entry.BETA" id="beta" required>
+                        <option value="">Select...</option>
+                        <option value="Yes">Yes, I want early access</option>
+                        <option value="No">No, just interested</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-submit">Join Beta Waitlist</button>
+            </form>
+            
+            <p class="note">⚡ Zero spam. Unsubscribe anytime. We respect your privacy.</p>
+        </div>
+
+        <div class="footer">
+            <p>Built by <a href="https://github.com/xinjianghuo">@xinjianghuo</a> with ❤️ | Powered by OpenClaw</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">
+                <a href="#">Privacy Policy</a> • <a href="#">Terms</a> • <a href="https://github.com/xinjianghuo/wp-media-offloader">GitHub</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Google Analytics placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>

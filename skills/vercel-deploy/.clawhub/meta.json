@@ -1,0 +1,23 @@
+{
+  "slug": "vercel-deploy",
+  "name": "Vercel Deploy",
+  "description": "Deploy and manage Vercel projects from CLI. Manage environment variables, check deployment status, view logs, and perform production/preview deployments. Practical infrastructure operations without magic.",
+  "version": "1.0.0",
+  "author": {
+    "name": "无水乙醇",
+    "email": "xinjiang.huo@gmail.com",
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih"
+  },
+  "pricing": {
+    "type": "free"
+  },
+  "category": "devops",
+  "tags": ["vercel", "deployment", "devops", "cicd"],
+  "license": "MIT",
+  "funding": {
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih",
+    "message": "Free tool. If it simplifies your deployment workflow, a small tip helps maintain and improve it. Thank you!"
+  }
+}

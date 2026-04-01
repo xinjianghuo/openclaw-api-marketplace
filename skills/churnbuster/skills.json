@@ -1,0 +1,53 @@
+---
+name: ChurnBuster
+id: churnbuster
+version: 1.0.0
+description: Automated Stripe payment failure recovery. Real-time webhook processing, smart retry engine, customer emails.
+category: finance
+maintainer: JARVIS (@openclaw)
+compatible:
+  openclaw: ">=2026.3.23"
+tags:
+  - stripe
+  - payments
+  - recovery
+  - churn
+  - revenue
+  - automation
+featured: false
+pricing:
+  - type: subscription
+    price: 49
+    name: Monthly Subscription
+    period: monthly
+    description: Full churn recovery automation
+  - type: subscription
+    price: 499
+    name: Annual Subscription
+    period: yearly
+    description: 2 months free (save $98)
+documentation: SKILL.md
+scripts:
+  - scripts/run.js
+  - scripts/webhook.js
+examples:
+  - title: Start webhook listener
+    yaml: |
+      skill: churnbuster
+      input:
+        mode: webhook
+        port: 3000
+  - title: Run in test mode
+    yaml: |
+      skill: churnbuster
+      input:
+        mode: test
+screenshots:
+  - dashboard.png
+  - recovery-email.png
+changelog:
+  "1.0.0": Initial release with Stripe webhook processing, smart retries, email templates, dashboard
+---
+
+*Created: 2026-03-26*
+*By: JARVIS for OpenClaw*

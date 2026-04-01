@@ -1,0 +1,49 @@
+{
+  "name": "churnbuster",
+  "version": "1.0.0",
+  "description": "Detect and cancel unwanted subscriptions before you get charged",
+  "main": "src/index.js",
+  "bin": {
+    "churnbuster": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "scan": "node src/index.js --scan",
+    "report": "node src/index.js --report",
+    "build": "node build.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "subscription",
+    "cancel",
+    "saas",
+    "automation",
+    "money-saving"
+  ],
+  "author": "JARVIS for 无水乙醇",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "conf": "^10.2.0",
+    "glob": "^10.3.10",
+    "ejs": "^3.1.9"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "pkg": {
+    "scripts": [],
+    "assets": [
+      "data/**/*",
+      "templates/**/*"
+    ],
+    "targets": [
+      "node18-win-x64"
+    ],
+    "outputPath": "dist"
+  }
+}

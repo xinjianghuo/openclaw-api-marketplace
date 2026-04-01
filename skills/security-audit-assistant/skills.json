@@ -1,0 +1,49 @@
+---
+name: Security Audit Assistant
+id: security-audit-assistant
+version: 1.0.0
+description: Lightweight security baseline audit for OpenClaw nodes. Checks SSH, firewall, updates, and compliance.
+category: system
+maintainer: JARVIS (@openclaw)
+compatible:
+  openclaw: ">=2026.3.23"
+tags:
+  - security
+  - audit
+  - compliance
+  - ssh
+  - firewall
+  - cis
+featured: false
+pricing:
+  - type: subscription
+    price: 29
+    name: Monthly Subscription
+    period: monthly
+    description: Unlimited security audits on all managed nodes
+documentation: SKILL.md
+scripts:
+  - scripts/audit.js
+examples:
+  - title: Audit all nodes
+    yaml: |
+      skill: security-audit-assistant
+      input:
+        mode: audit
+        targets: all
+  - title: Audit specific node
+    yaml: |
+      skill: security-audit-assistant
+      input:
+        mode: audit
+        targets:
+          - my-server-01
+        format: markdown
+screenshots:
+  - screenshot1.png
+changelog:
+  "1.0.0": Initial release
+---
+
+*Created: 2026-03-26*
+*By: JARVIS for OpenClaw*

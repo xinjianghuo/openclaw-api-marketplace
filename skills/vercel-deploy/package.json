@@ -1,0 +1,31 @@
+{
+  "name": "ocl-vercel-deploy",
+  "version": "1.0.0",
+  "description": "Deploy and manage Vercel projects from CLI. Manage environment variables, check deployment status, view logs, and perform production/preview deployments.",
+  "main": "scripts/vercel_deploy.sh",
+  "bin": {
+    "ocl-vercel-deploy": "scripts/vercel_deploy.sh"
+  },
+  "scripts": {
+    "test": "bash scripts/vercel_deploy.sh --help"
+  },
+  "keywords": ["openclaw", "vercel", "deployment", "devops", "cicd"],
+  "author": {
+    "name": "无水乙醇",
+    "email": "xinjiang.huo@gmail.com"
+  },
+  "funding": {
+    "paypal": "algea@163.com",
+    "tron": "TBFKnXJtdMu3SbY8q6Z8ikuGY3aPUGQQih",
+    "message": "Free tool. If it simplifies your deployment workflow, a small tip helps maintain and improve it. Thank you!"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openclaw/api-marketplace"
+  },
+  "os": ["darwin", "linux", "win32"],
+  "engines": {
+    "node": ">=18.x"
+  }
+}

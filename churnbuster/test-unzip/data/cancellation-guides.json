@@ -1,0 +1,203 @@
+{
+  "guides": {
+    "netflix": {
+      "steps": [
+        {
+          "title": "Log in to Netflix",
+          "description": "Go to Netflix.com and sign in with your account.",
+          "url": "https://www.netflix.com/login"
+        },
+        {
+          "title": "Access Account Settings",
+          "description": "Click your profile icon → Account.",
+          "url": "https://www.netflix.com/account"
+        },
+        {
+          "title": "Cancel Membership",
+          "description": "Under 'Membership & billing', click 'Cancel membership'.",
+          "url": "https://www.netflix.com/cancel",
+          "warning": "You can continue watching until the end of the billing period. No refund for prepaid months."
+        },
+        {
+          "title": "Confirm Cancellation",
+          "description": "Follow the prompts. Netflix will send a confirmation email.",
+          "tip": "Save the email; if you're charged later, you have proof."
+        }
+      ],
+      "contact_info": {
+        "email": "info@help.netflix.com",
+        "phone": "1-866-579-7172 (US)",
+        "chat": "Available at help.netflix.com"
+      },
+      "general_tips": [
+        "Cancel at least 1 day before renewal to avoid next cycle charge",
+        "If you have a gift card balance, you may lose it upon cancellation",
+        "Download your watchlist before cancellation if you want to keep it"
+      ]
+    },
+    "spotify": {
+      "steps": [
+        {
+          "title": "Log in to Spotify",
+          "description": "Visit spotify.com and log in.",
+          "url": "https://www.spotify.com/login"
+        },
+        {
+          "title": "Go to Subscription Page",
+          "description": "Click 'Account' → 'Subscription'.",
+          "url": "https://www.spotify.com/account/subscription/"
+        },
+        {
+          "title": "Cancel Premium",
+          "description": "Click 'Change or cancel' → 'Cancel Premium'.",
+          "warning": "You'll revert to Free (ad-supported) tier immediately. No refunds for partial months."
+        },
+        {
+          "title": "Confirm via Email",
+          "description": "Spotify will email a cancellation confirmation.",
+          "tip": "Check spam folder if not received within 24h."
+        }
+      ],
+      "contact_info": {
+        "email": "support@spotify.com",
+        "contact_form": "https://www.spotify.com/us/contact-spotify-support/"
+      },
+      "general_tips": [
+        "Cancellation is effective immediately; you won't be charged next cycle",
+        "Your playlists remain, but offline downloads are removed",
+        "You can resubscribe anytime without losing data"
+      ]
+    },
+    "aws": {
+      "steps": [
+        {
+          "title": "Access AWS Billing Console",
+          "description": "Go to AWS Console → Billing & Cost Management.",
+          "url": "https://console.aws.amazon.com/billing/home"
+        },
+        {
+          "title": "Cancel Individual Services",
+          "description": "AWS doesn't have a single subscription. Cancel each service (EC2, RDS, S3, etc.) individually.",
+          "warning": "Simply deleting resources isn't enough; you must cancel the service subscription where applicable."
+        },
+        {
+          "title": "Set Billing Alarm",
+          "description": "Before leaving, set up a billing alarm to monitor unexpected charges.",
+          "url": "https://console.aws.amazon.com/cloudwatch/home",
+          "tip": "Highly recommended to avoid surprise costs after cancellation."
+        },
+        {
+          "title": "Close Account (Optional)",
+          "description": "To close entire AWS account: Contact AWS Support with 'account closure' request.",
+          "warning": "All data will be permanently deleted. Use with caution."
+        }
+      ],
+      "contact_info": {
+        "support_form": "https://aws.amazon.com/contact-us/",
+        "billing_support": "Available in console 24/7"
+      },
+      "general_tips": [
+        "AWS charges are pay-as-you-go; you may not have recurring subscriptions, just running resources",
+        "Monitor the 'Billing' dashboard for a month before assuming you're safe",
+        "Delete all resources: EC2, EBS, RDS, Lambda, etc."
+      ]
+    },
+    "stripe": {
+      "steps": [
+        {
+          "title": "Log in to Stripe Dashboard",
+          "description": "Go to dashboard.stripe.com and authenticate.",
+          "url": "https://dashboard.stripe.com/login"
+        },
+        {
+          "title": "Check Active Subscriptions",
+          "description": "Navigate to Billing → Subscriptions. See if any are active.",
+          "url": "https://dashboard.stripe.com/subscriptions"
+        },
+        {
+          "title": "Cancel Subscriptions",
+          "description": "For each subscription, click '...' → Cancel subscription.",
+          "url": "https://dashboard.stripe.com/billing/overview",
+          "warning": "Canceling a subscription stops future invoices but does not refund past payments."
+        },
+        {
+          "title": "Delete API Keys (Optional)",
+          "description": "If no longer using Stripe, revoke all API keys in Developers → API keys.",
+          "tip": "Revoke both live and test keys if not needed."
+        }
+      ],
+      "contact_info": {
+        "email": "support@stripe.com",
+        "support_form": "https://support.stripe.com/"
+      },
+      "general_tips": [
+        "Stripe is a payment processor; you likely have subscriptions with other services using Stripe, not Stripe itself",
+        "To cancel services billed via Stripe, contact the merchant directly; Stripe cannot cancel on your behalf",
+        "Disputing past charges with your bank is possible but may affect relationships"
+      ]
+    },
+    "paypal": {
+      "steps": [
+        {
+          "title": "Log in to PayPal",
+          "description": "Go to paypal.com and sign in.",
+          "url": "https://www.paypal.com/signin"
+        },
+        {
+          "title": "Go to Pre-approved Payments",
+          "description": "Click Settings (gear) → Payments → Manage pre-approved payments.",
+          "url": "https://www.paypal.com/myaccount/autopay"
+        },
+        {
+          "title": "Cancel Recurring Payments",
+          "description": "Find the merchant and click 'Cancel' next to each.",
+          "warning": "Do NOT cancel by contacting PayPal (slow). Use the 'Cancel' button in pre-approved payments."
+        },
+        {
+          "title": "Confirm Cancellation",
+          "description": "PayPal will send email confirmation. Keep it.",
+          "tip": "Also contact the merchant directly to confirm they won't charge you again."
+        }
+      ],
+      "contact_info": {
+        "help_center": "https://www.paypal.com/us/smarthelp/contact-us",
+        "phone": "1-888-221-1161 (US)"
+      },
+      "general_tips": [
+        "Pre-approved payments are hard to cancel if merchant doesn't cooperate; PayPal may not help",
+        "Consider blocking the merchant via 'Dispute' if unauthorized",
+        "Regularly review this list; unauthorized subscriptions are common"
+      ]
+    },
+    "github": {
+      "steps": [
+        {
+          "title": "Go to GitHub Billing",
+          "description": "Visit github.com/settings/billing while logged in.",
+          "url": "https://github.com/settings/billing"
+        },
+        {
+          "title": "Manage Plans",
+          "description": "Under 'Plans', see current GitHub Pro, Team, or Enterprise plan.",
+          "url": "https://github.com/settings/billing/plans"
+        },
+        {
+          "title": "Downgrade or Cancel",
+          "description": "Click 'Change plan' → select 'Free' or 'Cancel plan'.",
+          "warning": "Downgrading to Free immediately removes private repos unless you have Pro. Back up first."
+        },
+        {
+          "title": "Check for Add-ons",
+          "description": "Also check 'Features' and 'Add-ons' sections for separate charges (e.g., Codespaces)."
+        }
+      ],
+      "contact_info": {
+        "support": "https://support.github.com/contact"
+      },
+      "general_tips": [
+        "GitHub charges monthly; cancel at any time, no prorated refunds typically",
+        "If part of an organization, you may be on a team plan managed by org owner"
+      ]
+    }
+  }
+}

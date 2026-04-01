@@ -1,0 +1,10 @@
+{
+  "skill": "node-connection-doctor",
+  "input": {
+    "nodeVersion": "v18.17.0",
+    "os": "Linux 5.15.0-86-generic",
+    "error": "ECONNREFUSED"
+  },
+  "email": "test@example.com",
+  "test": true
+}

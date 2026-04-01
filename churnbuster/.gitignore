@@ -1,0 +1,58 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+npm/
+yarn/
+
+# Build outputs
+dist/
+build/
+*.exe
+*.zip
+*.tgz
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Secrets (do not commit any real API keys)
+secrets/
+credentials/
+*.pem
+*.key
+
+# ChurnBuster specific
+reports/
+*.html (except templates/)
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Package
+*.tgz
+
+# Coverage
+coverage/
+
+# User data (config is fine, but not user data)
+config.json
